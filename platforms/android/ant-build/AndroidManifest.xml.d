@@ -1,2 +1,2 @@
-/home/dauvid/Documents/Kandidatarbete/PhoneGap/my-first-app/platforms/android/ant-build/AndroidManifest.xml : \
-/home/dauvid/Documents/Kandidatarbete/PhoneGap/my-first-app/platforms/android/AndroidManifest.xml \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/ant-build/AndroidManifest.xml : \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/AndroidManifest.xml \
