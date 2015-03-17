@@ -4,6 +4,10 @@
     <feature name="Camera">
         <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
+    <feature name="WizViewManagerPlugin">
+        <param name="android-package" value="jp.wizcorp.phonegap.plugin.wizViewManager.WizViewManagerPlugin" />
+        <url-filter value="wizpostmessage://" />
+    </feature>
     <name>Hello World</name>
     <description>
         Hello World sample application that responds to the deviceready event.
@@ -71,4 +75,5 @@
     <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
     <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
     <access origin="*" />
+    <access origin="http://pollux-server.herokuapp.com/" />
 </widget>

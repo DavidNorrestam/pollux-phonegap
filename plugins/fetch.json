@@ -4,5 +4,12 @@
             "type": "registry",
             "id": "org.apache.cordova.camera"
         }
+    },
+    "jp.wizcorp.phonegap.plugin.wizViewManagerPlugin": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Wizcorp/phonegap-plugin-wizViewManager.git",
+            "subdir": "."
+        }
     }
 }

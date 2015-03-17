@@ -27,12 +27,27 @@ module.exports = [
         "clobbers": [
             "CameraPopoverHandle"
         ]
+    },
+    {
+        "file": "plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin/wizViewManager/wizViewManager.js",
+        "id": "jp.wizcorp.phonegap.plugin.wizViewManagerPlugin.wizViewManagerPlugin",
+        "clobbers": [
+            "window.wizViewManager"
+        ]
+    },
+    {
+        "file": "plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin/wizViewManager/wizViewMessenger.js",
+        "id": "jp.wizcorp.phonegap.plugin.wizViewManagerPlugin.wizViewMessenger",
+        "clobbers": [
+            "window.wizViewMessenger"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.camera": "0.3.5"
+    "org.apache.cordova.camera": "0.3.5",
+    "jp.wizcorp.phonegap.plugin.wizViewManagerPlugin": "1.3.0"
 }
 // BOTTOM OF METADATA
 });

@@ -36,6 +36,7 @@
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/cordova.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/spec.html \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/spec \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/js/initiate.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/js/device.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/js/index.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/js/toastPlugin.js \
@@ -101,7 +102,14 @@
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/res/screen/bada-wac/screen-type3.png \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/res/screen/bada-wac/screen-type4.png \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/css/index.css \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/org.apache.cordova.camera \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin/wizViewManager \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin/wizViewManager/wizViewManager.js \
+/home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/jp.wizcorp.phonegap.plugin.wizViewManagerPlugin/www/phonegap/plugin/wizViewManager/wizViewMessenger.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/org.apache.cordova.camera/www \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/Camera.js \
 /home/dauvid/Documents/Kandidatarbete/PhoneGap/pollux-phonegap/platforms/android/assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js \
