@@ -6,7 +6,7 @@ var sender = {
   	sendImage: function (imageData) {
   		var imageJSON = {
   		  "type": "camera", 
-  			"data": imageData 
+  			"image": imageData
   		};
   		this.sendMessage(JSON.stringify(imageJSON));
   	}
