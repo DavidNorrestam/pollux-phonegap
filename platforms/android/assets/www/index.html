@@ -29,24 +29,16 @@
         <link rel="stylesheet" type="text/css" href="css/index.css" />
     </head>
     <body>
-<!--         <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div> -->
-        <!-- <button type="button" id="button-request-image">Request image!</button> 
-        <br>
-        <img src="" id="image-upload">
- -->
+        <iframe src="http://pollux-server.herokuapp.com" width="100%" height="100%" id="iframe"></iframe> 
 
-    <!--     <iframe src="http://pollux-server.herokuapp.com/" width="100%" height="100%"></iframe> -->
+        <!-- Scripts -->
         <script type="text/javascript" src="cordova.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/toastPlugin.js"></script>
         <script type="text/javascript" src="js/device.js"></script>
+        <script type="text/javascript" src="js/receiver.js"></script>
+        <script type="text/javascript" src="js/sender.js"></script>
+        <script type="text/javascript" src="js/bridge.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>

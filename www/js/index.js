@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var listener = null;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -35,25 +34,23 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         // Add messege listener
-        $(document).ready(function (){
-            this.addMessageListener();
-        });
-    },
-    camera: function (event) {
-        event.preventDefault();
-        browser.close();
-        alert("hello");
-        navigator.camera.getPicture();
-    }
-    addMessageListener: function (event) {
-        if (window.addEventListener){
-            addEventListener("message", listener, false);
-        } else {
-            attachEvent("onmessage", listener);
-        }
+        receiver.addMessageListener();
     }
 };
-function listener(event) {
-    console.log("Message received");
-    alert(event.data);
+
+
+function getPicture() {
+    console.log("getPicture");
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL
+});
+}
+function onSuccess(imageData) {
+    console.log("cameraSuccess");
+    alert("cameraSuccess");
+    document.getElementById("iframe").contentWindow.postMessage("hej", "http://pollux-server.herokuapp.com"); //change URL to incoming url when getting message
+}
+function onFail() {
+    console.log("cameraError");
+    alert("cameraError");
 }

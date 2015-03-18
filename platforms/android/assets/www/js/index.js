@@ -16,7 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var browser = null;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,34 +33,24 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        //http://pollux-server.herokuapp.com
-        browser = window.open('mockPage.html', '_blank');
-        /*browser = window.open('mockPage.html', '_blank');*/
-        browser.addEventListener('loadstart', function(event) { camera(); });
-        browser.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-
-        /*wizViewManager.create("pollux", { src: "mockPage.html" }, success, fail);
-        $("#button-request-image").on("click", function(e) {
-            e.preventDefault();
-            requestImage();
-        });*/
-    },
-    camera: function (event) {
-        event.preventDefault();
-        browser.close();
-        alert("hello");
-        navigator.camera.getPicture();
+        // Add messege listener
+        receiver.addMessageListener();
     }
 };
-function camera() {
-    alert("camera!");
-}
-function success() {
-   /* wizViewMessenger.postMessage("Running on phonegap!", "pollux");
-    wizViewManager.show("pollux");
-    alert("Success!");*/
-}
 
-function fail() {
-    alert("FAIL!!!!");
+
+function getPicture() {
+    console.log("getPicture");
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+    destinationType: Camera.DestinationType.DATA_URL
+});
+}
+function onSuccess(imageData) {
+    console.log("cameraSuccess");
+    alert("cameraSuccess");
+    document.getElementById("iframe").contentWindow.postMessage("hej", "http://pollux-server.herokuapp.com"); //change URL to incoming url when getting message
+}
+function onFail() {
+    console.log("cameraError");
+    alert("cameraError");
 }
