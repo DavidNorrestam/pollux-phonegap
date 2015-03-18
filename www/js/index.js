@@ -35,22 +35,6 @@ var app = {
     onDeviceReady: function() {
         // Add messege listener
         receiver.addMessageListener();
+        bridge.initiateWebApp();
     }
 };
-
-
-function getPicture() {
-    console.log("getPicture");
-    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-    destinationType: Camera.DestinationType.DATA_URL
-});
-}
-function onSuccess(imageData) {
-    console.log("cameraSuccess");
-    alert("cameraSuccess");
-    document.getElementById("iframe").contentWindow.postMessage("hej", "http://pollux-server.herokuapp.com"); //change URL to incoming url when getting message
-}
-function onFail() {
-    console.log("cameraError");
-    alert("cameraError");
-}

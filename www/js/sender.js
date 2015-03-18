@@ -9,5 +9,11 @@ var sender = {
   			"image": imageData
   		};
   		this.sendMessage(JSON.stringify(imageJSON));
+  	},
+  	sendPhoneGapInitiate: function () {
+  		var phoneGapJSON = {
+  			"type": "phonegap"
+  		};
+  		this.sendMessage(phoneGapJSON);
   	}
 }
