@@ -8,10 +8,12 @@ var receiver = {
         }
     },
     messageReceived: function (event) {
-    if (event.data === "camera") {
-        bridge.getPicture();
-    } else {
-        console.log("Message received");
-        alert(event.data);    
+        if (event.data === "camera") {
+            bridge.getPicture();
+        } else {
+            console.log("Message received");
+            alert(event.data);    
+        }
     }
+
 }
