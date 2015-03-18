@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+<body>
+<button type="button" onClick="cameraEvent">Click me</button>
+<a href="mockPage2.html">Change page</a>
+<script type="text/javascript">
+	function onMessage() {
+		var header = document.createElement("h1");
+		header.id = "header";
+		header.innerHTML = "HEADER";
+		document.body.appendChild(header);
+	}
+	function onMessageWiz() {
+		var header = document.createElement("h1");
+		header.id = "header";
+		header.innerHTML = "HEADER WIZ";
+		document.body.
+		appendChild(header);
+	}
+	function cameraEvent() {
+		// Create the event.
+		var event = document.createEvent('Event');
+
+		// Define that the event name is 'build'.
+		event.initEvent('camera', true, true);
+
+		window.dispatchEvent(event);
+	}
+</script>
+</body>
+</html>

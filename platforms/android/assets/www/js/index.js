@@ -16,10 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var browser = null;
 var app = {
     // Application Constructor
     initialize: function() {
-        this.bindEvents();
+        this.bindEvents();  
     },
     // Bind Event Listeners
     //
@@ -33,21 +34,32 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        wizViewManager.create("pollux", { src: "http://pollux-server.herokuapp.com" }, success, fail);
+        //http://pollux-server.herokuapp.com
+        browser = window.open('mockPage.html', '_blank');
+        /*browser = window.open('mockPage.html', '_blank');*/
+        browser.addEventListener('loadstart', function(event) { camera(); });
+        browser.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+
+        /*wizViewManager.create("pollux", { src: "mockPage.html" }, success, fail);
         $("#button-request-image").on("click", function(e) {
             e.preventDefault();
             requestImage();
-        });
+        });*/
+    },
+    camera: function (event) {
+        event.preventDefault();
+        browser.close();
+        alert("hello");
+        navigator.camera.getPicture();
     }
 };
-function mockListener(event) {
-    alert("Hej!");
+function camera() {
+    alert("camera!");
 }
 function success() {
-    window.addEventListener("message", mockListener);
-    wizViewMessenger.postMessage("Running on phonegap!", "pollux");
+   /* wizViewMessenger.postMessage("Running on phonegap!", "pollux");
     wizViewManager.show("pollux");
-    alert("Success!");
+    alert("Success!");*/
 }
 
 function fail() {

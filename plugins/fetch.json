@@ -11,5 +11,11 @@
             "url": "https://github.com/Wizcorp/phonegap-plugin-wizViewManager.git",
             "subdir": "."
         }
+    },
+    "org.apache.cordova.inappbrowser": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.inappbrowser"
+        }
     }
 }
