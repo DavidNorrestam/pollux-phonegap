@@ -1,19 +1,16 @@
 var receiver = {
-    addMessageListener: function (event) {
-        if (window.addEventListener){
-            window.addEventListener("message", this.messageReceived, false);
-            alert("hello");
-        } else {
-            attachEvent("onmessage", this.messageReceived);
-        }
+    addMessageListener: function () {
+        window.addEventListener("message", this.messageReceived, false);
+        console.log("phonegap: added eventlistener to phonegap");       
     },
     messageReceived: function (event) {
-        if (event.data === "camera") {
+        var json = event.data;
+        if (json.type === "camera") {
             bridge.getPicture();
+            console.log("phonegap: received camera request from browser");
         } else {
-            console.log("Message received");
+            console.log("phonegap: Message received");
             alert(event.data);    
         }
     }
-
 }

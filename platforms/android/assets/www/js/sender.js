@@ -6,8 +6,14 @@ var sender = {
   	sendImage: function (imageData) {
   		var imageJSON = {
   		  "type": "camera", 
-  			"data": imageData 
+  			"image": imageData
   		};
   		this.sendMessage(JSON.stringify(imageJSON));
+  	},
+  	sendPhoneGapInitiate: function () {
+  		var phoneGapJSON = {
+  			"type": "phonegap"
+  		};
+  		this.sendMessage(phoneGapJSON);
   	}
 }
