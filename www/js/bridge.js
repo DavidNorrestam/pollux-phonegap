@@ -1,12 +1,16 @@
 var bridge = {
 	getPicture: function () {
-		camera.getPicture();
 		console.log("Phonegap, bridge: getpicture from bridge object")
+		camera.getPicture();
+	},
+	getGeolocation: function() {
+		console.log("Phonegap, bridge: getGeolocation from bridge object")
+		geolocation.getGeolocation();
 	},
 	initiateWebApp: function () {
-		 //we need to wait for the iframe to be fully loaded in order to send messages to the iframe
+		 // Wait for iFrame to load before initiating to phonegap behavior
 		 $("#iframe").load(function(){
-		 	console.log("PhoneGap, brdige, iframe loaded");
+		 	console.log("PhoneGap, bridge, iframe loaded");
 			sender.sendPhoneGapInitiate();
      });
 

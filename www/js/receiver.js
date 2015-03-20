@@ -4,15 +4,19 @@ var receiver = {
         console.log("phonegap: added eventlistener to phonegap");       
     },
     
-    messageReceived: function (event) {
-        var eventJSON = event.data;
-        console.log("phonegap receiver: messageReceived - " + eventJSON);
-        if (eventJSON.type === "camera") {
-            bridge.getPicture();
+    messageReceived: function (message) {
+        var messageAsJSON = JSON.parse(message.data);
+        console.log("phonegap receiver: messageReceived - " + messageAsJSON);
+        if (messageAsJSON.type === "camera") {
             console.log("phonegap, receiver: received camera request from browser");
-        } else {
+            bridge.getPicture();
+        } else if (messageAsJSON.type === "geolocation") {
+            console.log("phonegap, receiver: received geolocation request from browser");
+            bridge.getGeolocation();
+        } 
+        else {
             console.log("phonegap, receiver: Message with unknown type recived");
-            alert(event.data);    
+            alert(message.data);    
         }
     }
 }
