@@ -5,15 +5,14 @@ var receiver = {
     },
     
     messageReceived: function (event) {
-        var json = event.data;
-        console.log("phonegap receiver: messageReceived - " + event.data);
-
-        // if (json.type === "camera") {
-        //     bridge.getPicture();
-        //     console.log("phonegap: received camera request from browser");
-        // } else {
-        //     console.log("phonegap: Message received");
-        //     alert(event.data);    
-        // }
+        var eventJSON = event.data;
+        console.log("phonegap receiver: messageReceived - " + eventJSON);
+        if (eventJSON.type === "camera") {
+            bridge.getPicture();
+            console.log("phonegap, receiver: received camera request from browser");
+        } else {
+            console.log("phonegap, receiver: Message with unknown type recived");
+            alert(event.data);    
+        }
     }
 }

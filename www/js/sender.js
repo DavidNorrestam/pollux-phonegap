@@ -4,13 +4,15 @@ var sender = {
       console.log("PhoneGap, sender.js, sendMessage: " + JSON.stringify(JSONMessage));
   		document.getElementById("iframe").contentWindow.postMessage(JSON.stringify(JSONMessage), "http://pollux-server.herokuapp.com");
   	},
-  	sendImage: function (imageData) {
-  		var imageJSON = {
-  		  "type": "camera", 
-  			"image": imageData
-  		};
-  		this.sendMessage(imageJSON);
-  	},
+
+    sendData: function (type, data) {
+      var dataJSON = {
+        "type": type, 
+        "data": data
+      };
+      this.sendMessage(dataJSON);
+    },
+
   	sendPhoneGapInitiate: function () {
   		var phoneGapJSON = {
   			"type": "phonegap"
