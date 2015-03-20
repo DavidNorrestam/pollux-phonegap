@@ -67,7 +67,7 @@ var geolocation = {
 	// Request geolocation
 	getGeolocation: function(){
 		console.log("Phonegap bridge: getGeolocation");
-		navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError);
+		navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000}});
 	},
 
 	// Called upon successful geolocation requests
