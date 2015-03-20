@@ -2,7 +2,7 @@ var bridge = {
 	getPicture: function () {
 		camera.getPicture();
 		console.log("Phonegap bridge: getpicture from bridge object")
-	}
+	},
 	initiateWebApp: function () {
 		sender.sendPhoneGapInitiate();
 	}
