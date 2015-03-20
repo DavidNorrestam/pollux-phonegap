@@ -43,7 +43,6 @@
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/js/bridge.js \
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/js/index.js \
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/js/device.js \
-/home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/js/initiate.js \
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/js/sender.js \
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/img/logo.png \
 /home/philip/trialbee/pollux-phonegap/platforms/android/assets/www/plugins/org.apache.cordova.camera \

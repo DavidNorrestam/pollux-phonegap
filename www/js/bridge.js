@@ -2,9 +2,17 @@ var bridge = {
 	getPicture: function () {
 		camera.getPicture();
 		console.log("Phonegap bridge: getpicture from bridge object")
-	}
+	},
 	initiateWebApp: function () {
-		sender.sendPhoneGapInitiate();
+		 //we need to wait for the iframe to be fully loaded in order to send messages to the iframe
+		 $("#iframe").load(function(){
+		 	console.log("PhoneGap, brdige, iframe loaded");
+			sender.sendPhoneGapInitiate();
+     });
+
+     $("#iframe").attr({
+     	src:"http://pollux-server.herokuapp.com"
+     });
 	}
 }
 
