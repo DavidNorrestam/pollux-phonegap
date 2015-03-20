@@ -73,7 +73,6 @@ var geolocation = {
 	// Called upon successful geolocation requests
 	onSuccess : function(position) {
 		console.log("Phonegap, bridge: geolocation success");
-		sender.sendGeolocation(position);
 		console.log('phonegap, bridge'          + '\n' +
 			'Latitude: '          + position.coords.latitude          + '\n' +
 			'Longitude: '         + position.coords.longitude         + '\n' +
