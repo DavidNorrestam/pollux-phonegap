@@ -13,15 +13,13 @@ var receiver = {
         if (messageAsJSON.type === "camera") {
             console.log("phonegap, receiver: received camera request from browser");
             bridge.getPicture();
-        }
-        if (messageAsJSON.type === "image") {
+        } else if (messageAsJSON.type === "image") {
             console.log("phonegap, receiver: received image request from browser");
             bridge.uploadPicture();
         } else if (messageAsJSON.type === "geolocation") {
             console.log("phonegap, receiver: received geolocation request from browser");
             bridge.getGeolocation();
-        } 
-        else {
+        } else {
             console.log("phonegap, receiver: Message with unknown type recived");
             alert(message.data);    
         }
