@@ -2,25 +2,8 @@
 var Pollux       = null;
 var PolluxDevice = null;
 
-var LocalDevice = {
-  // Load webapplication and initiate to phonegap behavior on completion
-  initiateWebApp: function () {
-     // Wait for iFrame to load before initiating to phonegap behavior
-     $('#web-context').load(function(){
-      console.log('PhoneGap, bridge, iframe loaded');
-      Pollux = document.getElementById('web-context').contentWindow.Pollux;
-      PolluxDevice = Pollux.setDevice('phonegap');
-     });
-     // Load webapplication
-     $('#web-context').attr({
-      // src: 'http://pollux-server.herokuapp.com'
-      src: 'http://192.168.0.100:3000'
-    });
-  }
-};
-
 // Contains functions for camera API calls
-var Camera = new function() {
+var DeviceCamera = new function() {
   var self = this;
 
   self.currentCallback = null;
@@ -64,7 +47,7 @@ var Camera = new function() {
     console.log(" Phonegap, bridge: cameraError");
     alert("Phonegap, bridge: cameraError");
   }
-}
+};
 
 // Contains functions for Geolocation API calls
 var geolocation = {
@@ -95,5 +78,22 @@ var geolocation = {
     console.log("Phonegap, bridge: geolocation error");
     alert('code: '    + error.code    + '\n' +
       'message: ' + error.message + '\n');
+  }
+};
+
+var LocalDevice = {
+  // Load webapplication and initiate to phonegap behavior on completion
+  initiateWebApp: function () {
+     // Wait for iFrame to load before initiating to phonegap behavior
+     $('#web-context').load(function(){
+      console.log('PhoneGap, bridge, iframe loaded');
+      Pollux = document.getElementById('web-context').contentWindow.Pollux;
+      PolluxDevice = Pollux.setDevice('phonegap');
+     });
+     // Load webapplication
+     $('#web-context').attr({
+      // src: 'http://pollux-server.herokuapp.com'
+      src: 'http://192.168.0.100:3000'
+    });
   }
 };

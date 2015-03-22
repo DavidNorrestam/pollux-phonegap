@@ -15,11 +15,11 @@ var PolluxReceiver = {
 
     if (messageAsJSON.type === 'camera') {
       console.log('phonegap, receiver: received camera request from browser');
-      Camera.getPicture(callbackName);
+      DeviceCamera.getPicture(callbackName);
 
     } else if (messageAsJSON.type === 'image') {
       console.log('phonegap, receiver: received image request from browser');
-      Camera.uploadPicture(callbackName);
+      DeviceCamera.uploadPicture(callbackName);
 
     } else if (request.type === 'geolocation') {
       console.log('phonegap, receiver: received geolocation request from browser');

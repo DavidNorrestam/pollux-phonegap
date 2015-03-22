@@ -16,6 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+ var LocalDevice = {
+  // Load webapplication and initiate to phonegap behavior on completion
+  initiateWebApp: function () {
+     // Wait for iFrame to load before initiating to phonegap behavior
+     $('#web-context').load(function(){
+      console.log('PhoneGap, bridge, iframe loaded');
+      Pollux = document.getElementById('web-context').contentWindow.Pollux;
+      PolluxDevice = Pollux.setDevice('phonegap');
+     });
+     // Load webapplication
+     $('#web-context').attr({
+      // src: 'http://pollux-server.herokuapp.com'
+      src: 'http://192.168.0.100:3000'
+    });
+  }
+};
+
 var app = {
   // Application Constructor
   initialize: function() {
