@@ -28,7 +28,8 @@ var bridge = {
 
 		 // Load webapplication
      $("#iframe").attr({
-     	src:"http://pollux-server.herokuapp.com"
+     	/*src:"http://pollux-server.herokuapp.com"*/
+     	src: "192.168.0.100"
      });
 	}
 }
