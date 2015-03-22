@@ -4,9 +4,9 @@ var PolluxDevice = null;
 
 var bridge = {
   // Requests image from camera
-  getPicture: function () {
+  getPicture: function (callbackName) {
     console.log("Phonegap, bridge: getpicture from bridge object");
-    camera.getPicture();
+    camera.getPicture(callbackName);
   },
 
   // Requests image from photolibrary
