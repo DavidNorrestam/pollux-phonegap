@@ -10,11 +10,11 @@ var receiver = {
     messageReceived: function(message) {
         var messageAsJSON = JSON.parse(message.data);
         var type          = messageAsJSON.type;
-        var callbackName  = messageAsJSON.callback;
+        var callbackName  = messageAsJSON.callbackName;
         
         console.log("phonegap receiver: messageReceived - " + messageAsJSON);
         if (messageAsJSON.type === "camera") {
-            console.log("phonegap, receiver: received camera request from browser");
+            console.log(callbackName);
             bridge.getPicture(callbackName);
         } else if (messageAsJSON.type === "image") {
             console.log("phonegap, receiver: received image request from browser");
