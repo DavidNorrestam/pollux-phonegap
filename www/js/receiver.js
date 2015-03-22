@@ -31,4 +31,4 @@ var PolluxReceiver = {
       alert(request.data);
     }
   }
-}
+};
