@@ -1,4 +1,3 @@
-// Contains functions for listening to postMessage calls on this window
 var PolluxReceiver = {
   // Register message listener
   addMessageListener: function() {
