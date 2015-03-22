@@ -2,19 +2,19 @@
 var bridge = {
 	// Requests image from camera
 	getPicture: function () {
-		console.log("Phonegap, bridge: getpicture from bridge object")
+		console.log("Phonegap, bridge: getpicture from bridge object");
 		camera.getPicture();
 	},
 
 	// Requests image from photolibrary
 	uploadPicture: function () {
-		console.log("Phonegap, bridge: getpicture from bridge object")
+		console.log("Phonegap, bridge: getpicture from bridge object");
 		camera.uploadPicture();
 	},
 
 	// Requests geolocation
 	getGeolocation: function() {
-		console.log("Phonegap, bridge: getGeolocation from bridge object")
+		console.log("Phonegap, bridge: getGeolocation from bridge object");
 		geolocation.getGeolocation();
 	},
 
@@ -68,7 +68,7 @@ var geolocation = {
 	// Request geolocation
 	getGeolocation: function(){
 		console.log("Phonegap bridge: getGeolocation");
-		navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000}});
+		navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000});
 	},
 
 	// Called upon successful geolocation requests
