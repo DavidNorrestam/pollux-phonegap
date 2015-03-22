@@ -1,5 +1,6 @@
 // Relay function calls to
-var Pollux = null;
+var Pollux       = null;
+var PolluxDevice = null;
 
 var bridge = {
   // Requests image from camera
@@ -26,7 +27,7 @@ var bridge = {
      $("#web-context").load(function(){
       console.log('PhoneGap, bridge, iframe loaded');
       Pollux = document.getElementById('web-context').contentWindow.Pollux;
-      Pollux = Pollux.setDevice('phonegap');
+      PolluxDevice = Pollux.setDevice('phonegap');
      });
      // Load webapplication
      $("#web-context").attr({
@@ -61,7 +62,7 @@ var camera = {
   // Called upon successful image requests
   onSuccess: function (imageData) {
     console.log("Phonegap, bridge: cameraSuccess");
-    Pollux.device.deviceCallback(imageData, this.currentCallback);
+    PolluxDevice.deviceCallback(imageData, this.currentCallback);
   },
 
   // Called upon failed image requests
