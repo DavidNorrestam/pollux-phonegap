@@ -62,7 +62,8 @@ var camera = {
   // Called upon successful image requests
   onSuccess: function (imageData) {
     console.log("Phonegap, bridge: cameraSuccess");
-    PolluxDevice.deviceCallback(imageData, this.currentCallback);
+    // this.currentCallback
+    PolluxDevice.deviceCallback(imageData, 'addImgBase64');
   },
 
   // Called upon failed image requests
