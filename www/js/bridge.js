@@ -36,12 +36,16 @@ var bridge = {
   }
 }
 // Contains functions for camera API calls
-var camera = {
-  currentCallback: undefined,
+var camera = new function() {
+  var self = this;
+
+  self.currentCallback = null;
   // Requests image from camera
-  getPicture: function (callbackName) {
+  self.getPicture = function(callbackName) {
     console.log("Phonegap bridge: getPicture");
-    this.currentCallback = callbackName;
+
+    self.currentCallback = callbackName;
+
     navigator.camera.getPicture(
       this.onSuccess,
       this.onFail,
@@ -49,25 +53,29 @@ var camera = {
         destinationType: Camera.DestinationType.DATA_URL
       }
     );
-  },
+  };
 
   // Requests image from photolibrary
-  uploadPicture: function () {
+  self.uploadPicture = function() {
     console.log("Phonegap bridge: uploadPicture");
-    navigator.camera.getPicture(this.onSuccess, this.onFail,
-    {destinationType: Camera.DestinationType.DATA_URL,
-      sourceType: Camera.PictureSourceType.PHOTOLIBRARY});
-  },
+    navigator.camera.getPicture(
+      self.onSuccess,
+      self.onFail,
+      {
+        destinationType: Camera.DestinationType.DATA_URL,
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+      }
+    );
+  };
 
   // Called upon successful image requests
-  onSuccess: function (imageData) {
+  self.onSuccess = function(imageData) {
     console.log("Phonegap, bridge: cameraSuccess");
-    // this.currentCallback
-    PolluxDevice.deviceCallback(imageData, this.currentCallback);
+    PolluxDevice.deviceCallback(imageData, self.currentCallback);
   },
 
   // Called upon failed image requests
-  onFail: function() {
+  self.onFail = function() {
     console.log(" Phonegap, bridge: cameraError");
     alert("Phonegap, bridge: cameraError");
   }
