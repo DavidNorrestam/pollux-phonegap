@@ -9,7 +9,7 @@ var PolluxReceiver = {
   messageReceived: function(message) {
     var messageAsJSON = JSON.parse(message.data);
     var type          = messageAsJSON.type;
-    var callbackName  = messageAsJSON.callback;
+    var callbackName  = messageAsJSON.callbackName;
 
     console.log('phonegap receiver: messageReceived - ' + messageAsJSON);
 
