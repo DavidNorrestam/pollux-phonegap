@@ -27,11 +27,11 @@ var bridge = {
 		 	console.log("PhoneGap, bridge, iframe loaded");
 			sender.sendPhoneGapInitiate();
       Pollux = document.getElementById('iframe').contentWindow.Pollux;
+			Pollux.setDevice('phonegap');
      });
-
 		 // Load webapplication
      $("#web-context").attr({
-     	src:"http://pollux-server.herokuapp.com"
+     	src:"http://192.168.0.100:3000"
      });
 	}
 }

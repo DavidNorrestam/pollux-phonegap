@@ -19,12 +19,12 @@ var receiver = {
         } else if (messageAsJSON.type === "image") {
             console.log("phonegap, receiver: received image request from browser");
             bridge.uploadPicture();
-        } else if (messageAsJSON.type === "geolocation") {
+        } else if (request.type === "geolocation") {
             console.log("phonegap, receiver: received geolocation request from browser");
             bridge.getGeolocation();
         } else {
-            console.log("phonegap, receiver: Message with unknown type recived");
-            alert(message.data);    
+            console.log("phonegap, receiver: request with unknown type recived");
+            alert(request.data);    
         }
     }
 }
