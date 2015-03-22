@@ -25,7 +25,7 @@ var bridge = {
      // Wait for iFrame to load before initiating to phonegap behavior
      $("#web-context").load(function(){
       console.log('PhoneGap, bridge, iframe loaded');
-      Pollux = document.getElementById('iframe').contentWindow.Pollux;
+      Pollux = document.getElementById('web-context').contentWindow.Pollux;
       Pollux = Pollux.setDevice('phonegap');
      });
      // Load webapplication
