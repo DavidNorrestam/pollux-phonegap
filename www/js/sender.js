@@ -10,8 +10,9 @@ var sender = {
         "data": data
       };
       this.sendMessage(dataJSON);
-    }
-,  	sendPhoneGapInitiate: function () {
+    },  	
+
+    sendPhoneGapInitiate: function () {
   		var phoneGapJSON = {
   			"type": "phonegap"
   		};
