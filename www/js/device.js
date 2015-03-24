@@ -92,8 +92,8 @@ var LocalDevice = {
      });
      // Load webapplication
      $('#web-context').attr({
-      // src: 'http://pollux-server.herokuapp.com'
-      src: 'http://192.168.0.100:3000'
+      src: 'http://pollux-server.herokuapp.com'
+      //src: 'http://192.168.0.100:3000'
     });
   }
 };
