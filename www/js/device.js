@@ -70,7 +70,7 @@ var LocalDevice = {
 };
     // Deprecated method
 // Contains functions for Geolocation API calls
-/*var geolocation = new function () {
+var geolocation = new function () {
   var self = this;
 
   self.currentCallback = null;
@@ -79,7 +79,6 @@ var LocalDevice = {
     console.log("Phonegap bridge: getGeolocation");
     self.currentCallback = callbackName;
     navigator.geolocation.getCurrentPosition(self.onSuccess, self.onError, {timeout: 10000});
-
   },
 
   // Called upon successful geolocation requests
@@ -109,4 +108,4 @@ var LocalDevice = {
       'message: ' + error.message + '\n');
   }
 };
-*/
+
