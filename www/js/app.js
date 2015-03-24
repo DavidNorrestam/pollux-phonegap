@@ -17,7 +17,7 @@
  * under the License.
  */
 
- var LocalDevice = {
+/* var LocalDevice = {
   // Load webapplication and initiate to phonegap behavior on completion
   initiateWebApp: function () {
      // Wait for iFrame to load before initiating to phonegap behavior
@@ -28,11 +28,11 @@
      });
      // Load webapplication
      $('#web-context').attr({
-      // src: 'http://pollux-server.herokuapp.com'
-      src: 'http://192.168.0.100:3000'
+     src: 'http://pollux-server.herokuapp.com'
+    //  src: 'http://192.168.0.100:3000'
     });
   }
-};
+};*/
 
 var app = {
   // Application Constructor
