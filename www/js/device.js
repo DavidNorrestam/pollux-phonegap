@@ -103,9 +103,10 @@ var geolocation = new function () {
 
   // Called upon failed geolocation requests
   self.onError = function(error) {
-    console.log("Phonegap, bridge: geolocation error");
-    alert('code: '    + error.code    + '\n' +
-      'message: ' + error.message + '\n');
+    // console.log("Phonegap, bridge: geolocation error");
+    // alert('code: '    + error.code    + '\n' +
+    //   'message: ' + error.message + '\n');
+    alert("Please activate your GPS in order to add your location")
   }
 };
 
