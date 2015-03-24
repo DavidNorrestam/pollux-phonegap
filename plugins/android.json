@@ -11,10 +11,6 @@
                         {
                             "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"WizViewManagerPlugin\"><param name=\"android-package\" value=\"jp.wizcorp.phonegap.plugin.wizViewManager.WizViewManagerPlugin\" /><url-filter value=\"wizpostmessage://\" /></feature>",
-                            "count": 1
                         }
                     ]
                 }
@@ -25,34 +21,15 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
                             "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
-                            "count": 1
                         }
                     ],
-                    "/manifest/application": [
-                        {
-                            "xml": "<activity android:label=\"@string/app_name\" android:name=\"com.custom.plugin.CustomCordovaPlugin\"><intent-filter></intent-filter></activity>",
-                            "count": 1
-                        }
-                    ]
+                    "/manifest/application": []
                 }
             }
         }
     },
     "installed_plugins": {
         "org.apache.cordova.camera": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "jp.wizcorp.phonegap.plugin.wizViewManagerPlugin": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "org.apache.cordova.geolocation": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },

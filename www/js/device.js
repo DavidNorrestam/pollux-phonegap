@@ -49,7 +49,27 @@ var DeviceCamera = new function() {
   }
 };
 
-// Contains functions for Geolocation API calls
+var LocalDevice = {
+  // Load webapplication and initiate to phonegap behavior on completion
+  initiateWebApp: function () {
+     // Wait for iFrame to load before initiating to phonegap behavior
+     $('#web-context').load(function(){
+      console.log('PhoneGap, bridge, iframe loaded');
+      var polluxWindow = document.getElementById('web-context').contentWindow;
+      Pollux = polluxWindow.Pollux;
+      PolluxDevice = Pollux.setDevice('phonegap', function(){
+        polluxWindow.document.getElementById('captured-video').style.display = "none";
+      });
+     });
+     // Load webapplication
+     $('#web-context').attr({
+      src: 'http://pollux-server.herokuapp.com'
+      //src: 'http://192.168.0.100:3000'
+    });
+  }
+};
+    // Deprecated method
+/*// Contains functions for Geolocation API calls
 var geolocation = new function () {
   var self = this;
 
@@ -90,23 +110,4 @@ var geolocation = new function () {
       'message: ' + error.message + '\n');
   }
 };
-
-var LocalDevice = {
-  // Load webapplication and initiate to phonegap behavior on completion
-  initiateWebApp: function () {
-     // Wait for iFrame to load before initiating to phonegap behavior
-     $('#web-context').load(function(){
-      console.log('PhoneGap, bridge, iframe loaded');
-      var polluxWindow = document.getElementById('web-context').contentWindow;
-      Pollux = polluxWindow.Pollux;
-      PolluxDevice = Pollux.setDevice('phonegap', function(){
-        polluxWindow.document.getElementById('captured-video').style.display = "none";
-      });
-     });
-     // Load webapplication
-     $('#web-context').attr({
-      src: 'http://pollux-server.herokuapp.com'
-      //src: 'http://192.168.0.100:3000'
-    });
-  }
-};
+*/
