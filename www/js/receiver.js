@@ -13,21 +13,21 @@ var PolluxReceiver = {
 
     console.log('phonegap receiver: messageReceived - ' + messageAsJSON);
 
-    if (messageAsJSON.type === 'camera') {
+    if (type === 'camera') {
       console.log('phonegap, receiver: received camera request from browser');
       DeviceCamera.getPicture(callbackName);
 
-    } else if (messageAsJSON.type === 'image') {
+    } else if (type === 'image') {
       console.log('phonegap, receiver: received image request from browser');
       DeviceCamera.uploadPicture(callbackName);
 
-    } else if (request.type === 'geolocation') {
+    } else if (type === 'geolocation') {
       console.log('phonegap, receiver: received geolocation request from browser');
-      geolocation.getGeolocation();
+      geolocation.getGeolocation(callbackName);
 
     } else {
       console.log('phonegap, receiver: request with unknown type recived');
-      alert(request.data);
+      alert(message.data);
     }
   }
 };

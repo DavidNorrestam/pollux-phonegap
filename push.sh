@@ -1,1 +1,1 @@
-git add .; git commit -m "asd"; git push origin master;
+git add .; git commit -m "Auto push"; git push origin pollux-server-refactor;

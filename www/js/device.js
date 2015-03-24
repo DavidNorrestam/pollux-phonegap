@@ -51,10 +51,16 @@ var DeviceCamera = new function() {
 
 // Contains functions for Geolocation API calls
 var geolocation = {
+  var self = this;
+
+  self.currentCallback = null;
   // Request geolocation
-  getGeolocation: function(){
+  getGeolocation: function(callbackName){
     console.log("Phonegap bridge: getGeolocation");
-    navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000});
+    self.currentCallback = callbackName;
+    //navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000});
+    var geo = cordova.require('cordova/plugin/geolocation');
+    geo.getCurrentPosition(onSuccess, onError,{timeout: 10000});
   },
 
   // Called upon successful geolocation requests
@@ -70,7 +76,11 @@ var geolocation = {
       'Speed: '             + position.coords.speed             + '\n' +
       'Timestamp: '         + position.timestamp                + '\n');
 
-    // TODO: Send the data
+    var locationData = JSON.stringify({
+      latitude: position.coords.latitude,
+      longitude: position.coords.longitude
+    });
+    PolluxDevice.deviceCallback(locationData, self.currentCallback);
   },
 
   // Called upon failed geolocation requests
