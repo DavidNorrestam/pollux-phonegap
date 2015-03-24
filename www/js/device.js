@@ -50,21 +50,21 @@ var DeviceCamera = new function() {
 };
 
 // Contains functions for Geolocation API calls
-var geolocation = {
+var geolocation = new function () {
   var self = this;
 
   self.currentCallback = null;
   // Request geolocation
-  getGeolocation: function(callbackName){
+  self.getGeolocation = function(callbackName){
     console.log("Phonegap bridge: getGeolocation");
     self.currentCallback = callbackName;
     //navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000});
     var geo = cordova.require('cordova/plugin/geolocation');
-    geo.getCurrentPosition(onSuccess, onError,{timeout: 10000});
+    geo.getCurrentPosition(self.onSuccess, self.onError,{timeout: 10000});
   },
 
   // Called upon successful geolocation requests
-  onSuccess : function(position) {
+  self.onSuccess = function(position) {
     console.log("Phonegap, bridge: geolocation success");
     console.log('phonegap, bridge'          + '\n' +
       'Latitude: '          + position.coords.latitude          + '\n' +
@@ -84,7 +84,7 @@ var geolocation = {
   },
 
   // Called upon failed geolocation requests
-  onError : function(error) {
+  self.onError = function(error) {
     console.log("Phonegap, bridge: geolocation error");
     alert('code: '    + error.code    + '\n' +
       'message: ' + error.message + '\n');

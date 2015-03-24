@@ -52,7 +52,9 @@ var app = {
   // function, we must explicitly call 'app.receivedEvent(...);'
   onDeviceReady: function() {
     // Add messege listener
-    PolluxReceiver.addMessageListener();
-    LocalDevice.initiateWebApp();
+    $(document).ready(function () {
+      PolluxReceiver.addMessageListener();
+      LocalDevice.initiateWebApp();
+    });
   }
 };
