@@ -97,8 +97,11 @@ var LocalDevice = {
      // Wait for iFrame to load before initiating to phonegap behavior
      $('#web-context').load(function(){
       console.log('PhoneGap, bridge, iframe loaded');
-      Pollux = document.getElementById('web-context').contentWindow.Pollux;
-      PolluxDevice = Pollux.setDevice('phonegap');
+      var polluxWindow = document.getElementById('web-context').contentWindow;
+      Pollux = polluxWindow.Pollux;
+      PolluxDevice = Pollux.setDevice('phonegap', function(){
+        polluxWindow.document.getElementById('captured-video').style.display = "none";
+      });
      });
      // Load webapplication
      $('#web-context').attr({
