@@ -69,8 +69,8 @@ var LocalDevice = {
   }
 };
     // Deprecated method
-/*// Contains functions for Geolocation API calls
-var geolocation = new function () {
+// Contains functions for Geolocation API calls
+/*var geolocation = new function () {
   var self = this;
 
   self.currentCallback = null;
@@ -78,9 +78,8 @@ var geolocation = new function () {
   self.getGeolocation = function(callbackName){
     console.log("Phonegap bridge: getGeolocation");
     self.currentCallback = callbackName;
-    //navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError, {timeout: 10000});
-    var geo = cordova.require('cordova/plugin/geolocation');
-    geo.getCurrentPosition(self.onSuccess, self.onError,{timeout: 10000});
+    navigator.geolocation.getCurrentPosition(self.onSuccess, self.onError, {timeout: 10000});
+
   },
 
   // Called upon successful geolocation requests
