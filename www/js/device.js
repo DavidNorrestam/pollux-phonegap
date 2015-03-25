@@ -2,6 +2,26 @@
 var Pollux       = null;
 var PolluxDevice = null;
 
+var LocalDevice = {
+  // Load webapplication and initiate to phonegap adapter on completion
+  initiateWebApp: function () {
+    // Wait for iFrame to load before initiating to phonegap adapter
+    $('#web-context').load(function(){
+      console.log('PhoneGap, bridge, iframe loaded');
+      var polluxWindow = document.getElementById('web-context').contentWindow;
+      Pollux = polluxWindow.Pollux;
+      PolluxDevice = Pollux.setDevice('phonegap', function(){
+        polluxWindow.document.getElementById('captured-video').style.display = "none";
+      });
+    });
+    // Load webapplication
+    $('#web-context').attr({
+      src: 'http://pollux-server.herokuapp.com'
+      //src: 'http://192.168.0.100:3000'
+    });
+  }
+};
+
 // Contains functions for camera API calls
 var DeviceCamera = new function() {
   var self = this;
@@ -49,25 +69,6 @@ var DeviceCamera = new function() {
   }
 };
 
-var LocalDevice = {
-  // Load webapplication and initiate to phonegap behavior on completion
-  initiateWebApp: function () {
-     // Wait for iFrame to load before initiating to phonegap behavior
-     $('#web-context').load(function(){
-      console.log('PhoneGap, bridge, iframe loaded');
-      var polluxWindow = document.getElementById('web-context').contentWindow;
-      Pollux = polluxWindow.Pollux;
-      PolluxDevice = Pollux.setDevice('phonegap', function(){
-        polluxWindow.document.getElementById('captured-video').style.display = "none";
-      });
-     });
-     // Load webapplication
-     $('#web-context').attr({
-      src: 'http://pollux-server.herokuapp.com'
-      //src: 'http://192.168.0.100:3000'
-    });
-  }
-};
     // Deprecated method
 // Contains functions for Geolocation API calls
 var geolocation = new function () {
@@ -86,13 +87,7 @@ var geolocation = new function () {
     console.log("Phonegap, bridge: geolocation success");
     console.log('phonegap, bridge'          + '\n' +
       'Latitude: '          + position.coords.latitude          + '\n' +
-      'Longitude: '         + position.coords.longitude         + '\n' +
-      'Altitude: '          + position.coords.altitude          + '\n' +
-      'Accuracy: '          + position.coords.accuracy          + '\n' +
-      'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
-      'Heading: '           + position.coords.heading           + '\n' +
-      'Speed: '             + position.coords.speed             + '\n' +
-      'Timestamp: '         + position.timestamp                + '\n');
+      'Longitude: '         + position.coords.longitude         + '\n');
 
     var locationData = JSON.stringify({
       latitude: position.coords.latitude,
